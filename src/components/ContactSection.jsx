@@ -150,7 +150,7 @@ export const ContactSection = () => {
               type="submit"
               className={cn(
                 "cosmic-button",
-                "w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                "w-full p-3 disabled:opacity-50 disabled:cursor-not-allowed"
               )}
               disabled={isSubmitting}
             >

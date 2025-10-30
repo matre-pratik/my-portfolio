@@ -27,7 +27,7 @@ export const AboutSection = () => {
         <div className="flex justify-center items-center ">
           <a
             href="#projects"
-            className="cosmic-button"
+            className="cosmic-button mt-8 mx-4 py-2 px-7"
           >
             View Projects
           </a>

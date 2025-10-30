@@ -74,14 +74,14 @@ export const HeroSection = () => {
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=matrepratik8728@gmail.com"
             target="_blank"
-            className="cosmic-button hidden sm:inline-block"
+            className="cosmic-button mt-8 mx-4 py-2 px-7 hidden sm:inline-block"
           >
             Hire Me
           </a>
           <a
             href="/Pratik_Matre_Resume.pdf"
             download="Pratik_Matre_Resume.pdf"
-            className="cosmic-button  opacity-0 animate-fade-in-delay-3"
+            className="cosmic-button mt-8 mx-4 py-2 px-7  opacity-0 animate-fade-in-delay-3"
           >
             Download CV
           </a>
