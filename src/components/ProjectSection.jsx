@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -21,9 +22,8 @@ const projects = [
     name: "Netflix Clone",
     image: "/projects/project3.png",
     github: "https://github.com/matre-pratik/Netflix-clone-",
-    live: "https://netflix-clone-five-wheat-21.vercel.app",
+    code: "https://github.com/matre-pratik/Netflix-clone-",
   },
-  
 ];
 
 export const ProjectsSection = () => {
@@ -62,13 +62,25 @@ export const ProjectsSection = () => {
   }, [scroll]);
 
   return (
-    <section id="projects" className="py-16 relative">
+    <motion.section
+      id="projects"
+      className="py-16 relative"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="container mx-auto px-4 relative">
-        <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-10 text-foreground">
+        <motion.h2
+          className="text-2xl md:text-4xl font-bold mb-8 md:mb-10 text-foreground"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           My <span className="text-primary">Projects</span>
-        </h2>
+        </motion.h2>
 
-        {/* ---- DESKTOP VIEW ---- */}
+        {/* ---- Desktop view ---- */}
         <div className="hidden md:flex items-center justify-center relative">
           {/* Left Button */}
           <button
@@ -101,11 +113,17 @@ export const ProjectsSection = () => {
             </style>
 
             {projects.map((project) => (
-              <article
+              <motion.article
                 key={project.id}
                 className="max-w-[300px] bg-card text-primary-foreground rounded-xl overflow-hidden border-2 border-border shadow-lg flex-shrink-0"
                 aria-labelledby={`proj-${project.id}-title`}
                 role="group"
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.97 }}
               >
                 <div>
                   <img
@@ -131,20 +149,20 @@ export const ProjectsSection = () => {
                       className="flex items-center justify-center gap-2 w-full py-2 text-lg font-semibold text-white bg-blue-500 hover:bg-blue-700 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-300"
                     >
                       <span>View on GitHub</span>
-                    <Github className="w-5 h-5" />
+                      <Github className="w-5 h-5" />
                     </a>
                     <a
-                      href={project.live}
+                      href={project.live ? project.live : project.code}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 w-full py-2 text-lg font-semibold text-white bg-gray-800 hover:bg-gray-900 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-primary"
                     >
-                      <span>Visit Site</span>
+                      <span>{project.live ? "Visit Site" : "Visit Code"}</span>
                       <ExternalLink className="w-5 h-5" />
                     </a>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
 
@@ -159,13 +177,18 @@ export const ProjectsSection = () => {
           </button>
         </div>
 
-        {/* ---- MOBILE VIEW ---- */}
+        {/* ---- mobile view ---- */}
         <div className="md:hidden grid grid-cols-1 gap-8">
           {projects.map((project) => (
-            <article
+            <motion.article
               key={project.id}
               className="bg-card text-primary-foreground rounded-xl overflow-hidden border-2 border-card shadow-lg"
               aria-labelledby={`mproj-${project.id}-title`}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
             >
               <div>
                 <img
@@ -193,20 +216,20 @@ export const ProjectsSection = () => {
                     <Github className="w-5 h-5" />
                   </a>
                   <a
-                    href={project.live}
+                    href={project.live ? project.live : project.code}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full py-2 text-lg font-semibold text-white bg-gray-800 hover:bg-gray-900 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-primary"
                   >
-                    <span>Visit Site</span>
+                    <span>{project.live ? "Visit Site" : "Visit Code"}</span>
                     <ExternalLink className="w-5 h-5" />
                   </a>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

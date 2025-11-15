@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const roles = [
   "Front-End Developer",
@@ -22,7 +23,6 @@ export const HeroSection = () => {
     const timeout = setTimeout(
       () => {
         if (!deleting) {
-          // Typing
           setText(currentRole.slice(0, charIndex + 1));
           setCharIndex(charIndex + 1);
 
@@ -50,27 +50,44 @@ export const HeroSection = () => {
   }, [charIndex, deleting, roleIndex, pause]);
 
   return (
-    <section
+    <motion.section
       id="hero"
       className="min-h-screen flex-col-reverse md:flex-row flex items-center justify-evenly"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
     >
-      <div className="px-2 max-sm:min-w-full">
+      {/* Left content */}
+      <motion.div
+        className="px-2 max-sm:min-w-full"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
         <h1 className="text-center md:text-start text-2xl md:text-4xl font-bold">
-          <span className="opacity-0 animate-fade-in">Hello, </span>
-          <span className="opacity-0 animate-fade-in-delay-1">I'm </span>
-          <span className="opacity-0 animate-fade-in-delay-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
-            Pratik{' '}
+          <span >Hello, </span>
+          <span >I'm </span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+            Pratik{" "}
           </span>
-          <span className="opacity-0 animate-fade-in-delay-3">Matre</span>
+          <span >Matre</span>
         </h1>
 
-        <p className="text-xl font-bold mt-2 text-center md:text-start  text-foreground opacity-0 animate-fade-in-delay-2">
+        <p className="text-xl font-bold mt-2 text-center md:text-start text-foreground">
           <span className="max-sm:hidden">A Passionate </span>
           <span className="text-primary">{text}</span>
           <span className="border-r-2 border-primary animate-blink ml-1"></span>
         </p>
 
-        <div className="flex justify-center md:justify-between items-center opacity-0 animate-fade-in-delay-2">
+        <motion.div
+          className="flex justify-center md:justify-between items-center "
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=matrepratik8728@gmail.com"
             target="_blank"
@@ -81,20 +98,28 @@ export const HeroSection = () => {
           <a
             href="/Pratik_Matre_Resume.pdf"
             download="Pratik_Matre_Resume.pdf"
-            className="cosmic-button mt-8 mx-4 py-2 px-7  opacity-0 animate-fade-in-delay-3"
+            className="cosmic-button mt-8 mx-4 py-2 px-7 "
           >
             Download CV
           </a>
-        </div>
-      </div>
-      <div className="max-sm:mt-4 z-0 flex justify-center md:justify-end">
+        </motion.div>
+      </motion.div>
+
+      {/* Right profile image */}
+      <motion.div
+        className="max-sm:mt-4 z-0 flex justify-center md:justify-end"
+        initial={{ opacity: 0, scale: 0.7 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <img
           src="profile/profile.jpg"
           alt="Profile"
           className="w-[250px] h-[250px] rounded-full border-2 border-border shadow-lg 
-           animate-profile-img hover:scale-105 transition-all duration-300"
+            hover:scale-105 transition-all duration-300"
         />
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };

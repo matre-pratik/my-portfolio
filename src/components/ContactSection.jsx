@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { cn } from "../lib/utils";
+import { motion } from "framer-motion";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -62,15 +63,33 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-16">
+    <motion.section
+      id="contact"
+      className="py-16"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-foreground text-center">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-foreground text-center"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           Get in <span className="text-primary">Touch</span>
-        </h2>
+        </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Left - Contact Info */}
-          <div className="flex flex-col justify-center space-y-6 text-foreground">
+          <motion.div
+            className="flex flex-col justify-center space-y-6 text-foreground"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <div className="flex items-center space-x-4">
               <a
                 href="mailto:matrepratik8728@gmail.com"
@@ -93,12 +112,16 @@ export const ContactSection = () => {
               <MapPin className="text-primary w-6 h-6" />
               <p className="text-lg">Navi Mumbai, India</p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right - Contact Form */}
-          <form
+          <motion.form
             onSubmit={onSubmit}
             className="p-8 rounded-2xl border-2 border-primary shadow-lg space-y-6 text-primary-foreground"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
             <div>
               <input
@@ -115,6 +138,7 @@ export const ContactSection = () => {
                 </p>
               )}
             </div>
+
             <div>
               <input
                 type="email"
@@ -130,6 +154,7 @@ export const ContactSection = () => {
                 </p>
               )}
             </div>
+
             <div>
               <textarea
                 rows="4"
@@ -164,9 +189,9 @@ export const ContactSection = () => {
             >
               {result}
             </p>
-          </form>
+          </motion.form>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const skills = [
   {
@@ -45,19 +46,35 @@ const skills = [
 
 export const SkillsSection = () => {
   return (
-    <section id="skills" className="py-16">
+    <motion.section
+      id="skills"
+      className="py-16"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-4xl font-bold mb-8  md:mb-10 text-foreground">
+        <motion.h2
+          className="text-2xl md:text-4xl font-bold mb-8 md:mb-10 text-foreground"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           My <span className="text-primary">Skills</span>
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {skills.map((skill) => (
-            <div
+            <motion.div
               key={skill.id}
-              className="flex flex-col items-center justify-center p-6 border-2 border-border rounded-xl  hover:scale-105 transition-transform duration-300"
+              className="flex flex-col items-center justify-center p-6 border-2 border-border rounded-xl hover:scale-105 transition-transform duration-300"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
             >
-              <div className="w-20 h-20 mb-4 flex items-center justify-center ">
+              <div className="w-20 h-20 mb-4 flex items-center justify-center">
                 <img
                   src={skill.image}
                   alt={skill.skill}
@@ -67,10 +84,10 @@ export const SkillsSection = () => {
               <h3 className="text-lg font-semibold text-foreground">
                 {skill.skill}
               </h3>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
