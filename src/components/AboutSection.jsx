@@ -22,30 +22,43 @@ export const AboutSection = () => {
         </motion.h2>
 
         <div className="space-y-6 text-start">
-          <motion.p
-            className="text-lg md:text-xl leading-relaxed"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            Hi, I’m <strong>Pratik Ramesh Matre</strong>, an aspiring Web
-            Developer with a passion for creating <strong>user-friendly</strong>{" "}
-            and visually appealing websites. I am eager to learn, grow, and
-            refine my skills in coding, designing, and optimizing web solutions.
-          </motion.p>
+         <motion.p
+  className="text-lg md:text-xl leading-relaxed"
+  initial={{ opacity: 0, x: 40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  Hi, I’m <strong>Pratik Ramesh Matre</strong>, a passionate{" "}
+  <strong>Full Stack Java Developer</strong> with a strong interest in
+  building modern, scalable, and user-friendly web applications. I enjoy
+  turning ideas into real-world solutions by combining clean frontend
+  design with efficient backend development.
+</motion.p>
 
-          <motion.p
-            className="text-lg md:text-xl leading-relaxed"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            I stay curious about the latest <strong>industry trends</strong> and
-            aim to build <strong>dynamic and impactful websites</strong> that
-            deliver great user experiences while supporting business goals. My
-            fresh perspective and enthusiasm drive me to contribute creatively
-            to every project I work on.
-          </motion.p>
+<motion.p
+  className="text-lg md:text-xl leading-relaxed"
+  initial={{ opacity: 0, x: 40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  I have knowledge of <strong>HTML, CSS, JavaScript, React.js, Java,
+  Spring Boot, MySQL, and REST APIs</strong>, which help me create
+  complete end-to-end web applications. From designing responsive user
+  interfaces to developing secure backend systems and managing databases,
+  I focus on writing clean, maintainable, and efficient code.
+</motion.p>
+
+<motion.p
+  className="text-lg md:text-xl leading-relaxed"
+  initial={{ opacity: 0, x: 40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  I am constantly learning new technologies, improving my problem-solving
+  skills, and exploring better development practices. My goal is to build
+  impactful digital products that deliver excellent user experiences while
+  solving real business problems.
+</motion.p>
         </div>
         <motion.div
           className="flex justify-center items-center"

@@ -42,6 +42,26 @@ const skills = [
     skill: "Java",
     image: "/skills/java.png",
   },
+  {
+    id: 9,
+    skill: "Hibernate",
+    image: "/skills/hibernate.png",
+  },
+  {
+    id: 10,
+    skill: "Spring",
+    image: "/skills/spring.png",
+  },
+  {
+    id: 11,
+    skill: "Spring Boot",
+    image: "/skills/spring-boot.png",
+  },
+  {
+    id: 12,
+    skill: "MySQL",
+    image: "/skills/mysql.png",
+  },
 ];
 
 export const SkillsSection = () => {
