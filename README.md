@@ -1,16 +1,48 @@
-# React + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+This is my personal portfolio website built using React and Tailwind CSS.  
+It showcases my frontend development skills, projects, and contact information in a clean and responsive layout.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React.js
+- Tailwind CSS
+- JavaScript (ES6+)
+- Vite / Create React App
+- Responsive Design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Single-page application built with React
+- Responsive design using Tailwind CSS
+- Projects showcase with live and GitHub links
+- Clean and modern UI
+- Fast performance and optimized build
 
-## React Compiler
+## Live Demo
+https://pratik-matre-portfolio.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to Run Locally
+1. Clone the repository
+2. Navigate to the project directory:
+   cd my-portfolio
+3. Install dependencies:
+   npm install
+4. Start the development server:
+   npm run dev
+5. Open the app in your browser.
 
-## Expanding the ESLint configuration
+## Concepts Demonstrated
+- Component-based architecture
+- State and props management
+- Responsive UI with Tailwind
+- Clean project structure
+- Modern frontend workflow
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Future Improvements
+- Add project case studies
+- Add contact form with backend
+- Improve accessibility and SEO
+
+## Author
+Pratik Matre  
+Email: matrepratik8728@gmail.com
